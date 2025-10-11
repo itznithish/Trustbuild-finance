@@ -314,30 +314,36 @@
                     <a class="btn btn-link" href="/personalloan.html" class="dropdown-item">Personal loan</a>
                 </div>
 
-<div class="col-lg-3 col-md-6">
-    <h4 class="text-white mb-4">Get in touch</h4>
-    <p>connect with us</p>
-    <div class="position-relative w-100">
-        <input id="signupEmail" class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
-        <button id="signupButton" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-    </div>
+<<div class="col-lg-3 col-md-6">
+  <h4 class="text-white mb-4">Get in touch</h4>
+  <p>Connect with us</p>
+  <div class="position-relative w-100">
+    <input id="signupEmail" class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
+    <button id="signupButton" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Sign Up</button>
+  </div>
 </div>
 
 <script>
-document.getElementById("signupButton").addEventListener("click", function() {
-    const userEmail = document.getElementById("signupEmail").value.trim();
+document.getElementById("signupButton").addEventListener("click", function () {
+    const email = document.getElementById("signupEmail").value.trim();
 
-    if (!userEmail) {
-        alert("Please enter your email address 🙂");
+    if (!email) {
+        alert("Please enter your email first 😅");
         return;
     }
 
     const subject = "New Signup Request";
-    const body = `Hey, keep me updated!\n\nMy email: ${userEmail}`;
+    const body = `Hello ,\n\ni am intrested in Services :\n\nEmail: ${email}\n\nThank you!`;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=trustbuildfinance@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // ✅ Mobile + Desktop compatible link
+    const mailtoUrl = `mailto:trustbuildfinance@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    window.open(gmailUrl, "_blank");
+    // Open default email app (works on mobile + desktop)
+    window.location.href = mailtoUrl;
+
+    setTimeout(() => {
+        alert("Opening your email app to complete signup 📩");
+    }, 500);
 });
 </script>
 
