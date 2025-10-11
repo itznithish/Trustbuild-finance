@@ -472,11 +472,11 @@ document.getElementById("callbackForm").addEventListener("submit", function(e) {
     const message = document.getElementById("message").value;
 
     // Build Gmail compose link
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=trustbuildfinance@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\n\nMessage:\n${message}`
-    )}`;
+const mailtoUrl = `mailto:trustbuildfinance@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\n\nMessage:\n${message}`
+)}`;
 
-    window.open(gmailUrl, "_blank");
+window.location.href = mailtoUrl;
 });
 </script>
 
